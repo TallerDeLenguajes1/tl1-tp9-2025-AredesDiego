@@ -1,33 +1,27 @@
 ﻿
-do
+using Lector.Direcorio.Archivos;
+
+internal class Program
 {
-    Console.WriteLine("Ingrese el path:");
-    string elPath = @"C:\Users\" + Console.ReadLine();
-
-    if (Directory.Exists(elPath))
+    private static void Main(string[] args)
     {
-        Console.WriteLine("La carpeta existe."); 
-
-        string[] carpetas = Directory.GetDirectories(elPath);
-
-        foreach (string carpeta in carpetas)
+        do
         {
-            Console.WriteLine(Path.GetFileName(carpeta));
-            var nombreDelArchivo = Directory.GetDirectories(elPath);
-        }
-        break;
+            Console.WriteLine("Ingrese el path:");
+            string elPath = Console.ReadLine(); //C:\Users\
+
+            if (Directory.Exists(elPath))
+            {
+                System.Console.WriteLine("----Subcarpetas");
+                manejoDirectorios.MostrarDirectorio(elPath);
+
+                System.Console.WriteLine("\n----Archivos");
+                manejoDirectorios.MostrarArchivos(elPath);
+
+                break;
+            }
+            else
+                Console.WriteLine("La carpeta no existe, Ingrese una valida:");
+        } while (true);
     }
-    else
-        Console.WriteLine("La carpeta no existe, Ingrese una valida:");
-    
-
-} while (true); 
-
-
-
-
-
-//      ..//casita/
-
-
-
+}
