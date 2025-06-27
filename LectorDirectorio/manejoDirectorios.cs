@@ -14,7 +14,6 @@ namespace Lector.Directorio.Archivos
                 Console.WriteLine("      " + Path.GetFileName(carpeta));
             }
         }
-
         public static void MostrarArchivos(string elPath)
         {
             string[] archivos = Directory.GetFiles(elPath);
