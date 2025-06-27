@@ -1,14 +1,17 @@
 ﻿
-using Lector.Direcorio.Archivos;
-
+using Lector.Directorio.Archivos;
+using System.IO;
+using System.Text;
 internal class Program
 {
     private static void Main(string[] args)
     {
+        string elPath = "";
+
         do
         {
             Console.WriteLine("Ingrese el path:");
-            string elPath = Console.ReadLine(); //C:\Users\
+            elPath = Console.ReadLine(); //Ejemplo : C:\Users\
 
             if (Directory.Exists(elPath))
             {
@@ -23,5 +26,7 @@ internal class Program
             else
                 Console.WriteLine("La carpeta no existe, Ingrese una valida:");
         } while (true);
+
+        manejoDirectorios.EscribirArchivos(elPath);
     }
 }
